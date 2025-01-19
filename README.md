@@ -50,6 +50,7 @@ This project is a Deno backend starter that uses Hono, Drizzle ORM, and Postgres
 - Run `deno task seed` to seed data to the database.
 
 * Check db.md for postgres related query to create db, user
+* Should implement seeder based on model in command/seed
 
 ### Drizzle Studio
 
@@ -93,13 +94,16 @@ This allows you to have a self-documenting API that is ready to test with Open A
 
 After defining the route, you can visit the `/reference` route for interactive documentation of the new route.
 
-
 ## Samples
+
 ### open api interactive doc
+
 ![open api interactive doc](./samples/openapidoc.png)
 
 ### open api json doc
+
 ![open api json doc](./samples/openapi.png)
 
 ### auto generated er diagram - dbml
+
 ![open api json doc](./samples/dbml.png)
