@@ -1,0 +1,5 @@
+{
+  "deno.enablePaths": ["./"],
+  "editor.inlayHints.enabled": "off",
+  "dbmlERDPreviewer.preferredTheme": "dark"
+}

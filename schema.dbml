@@ -1,0 +1,7 @@
+table notes {
+  id serial [pk, not null, increment]
+  title text [not null]
+  content text [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}

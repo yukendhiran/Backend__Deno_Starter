@@ -1,0 +1,62 @@
+{
+  "imports": {
+    "@/": "./src/",
+    "@check/deps": "jsr:@check/deps@^0.7.7",
+    "@drizzle-team/brocli": "npm:@drizzle-team/brocli@^0.11.0",
+    "@faker-js/faker": "npm:@faker-js/faker@^9.4.0",
+    "@hono/hono": "jsr:@hono/hono@^4.6.17",
+    "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.18.3",
+    "@scalar/hono-api-reference": "npm:@scalar/hono-api-reference@^0.5.166",
+    "@std/log": "jsr:@std/log@^0.224.13",
+    "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@^8.20.0",
+    "@typescript-eslint/parser": "npm:@typescript-eslint/parser@^8.20.0",
+    "drizzle-dbml-generator": "npm:drizzle-dbml-generator@^0.10.0",
+    "drizzle-kit": "npm:drizzle-kit@^0.30.2",
+    "drizzle-orm": "npm:drizzle-orm@^0.38.4",
+    "drizzle-zod": "npm:drizzle-zod@^0.6.1",
+    "eslint": "npm:eslint@^9.18.0",
+    "eslint-plugin-drizzle": "npm:eslint-plugin-drizzle@^0.2.3",
+    "hono": "npm:hono@^4.6.17",
+    "hono-pino": "npm:hono-pino@^0.7.0",
+    "pino": "npm:pino@^9.6.0",
+    "pino-pretty": "npm:pino-pretty@^13.0.0",
+    "postgres": "npm:postgres@^3.4.5",
+    "stoker": "npm:stoker@^1.4.2",
+    "zod": "npm:zod@^3.24.1"
+  },
+  "tasks": {
+    "drizzle-kit": "deno run --env -A --node-modules-dir npm:drizzle-kit",
+    "dev": " deno run --env --watch -A ./src/index.ts api",
+    "serve": "deno run -A --env ./src/index.ts api",
+    "push": "deno task drizzle-kit push",
+    "migrate": " deno run -A --env ./src/index.ts migrate",
+    "seed": " deno run -A --env ./src/index.ts seed",
+    "generate": " deno task drizzle-kit generate",
+    "studio": " deno task drizzle-kit studio",
+    "check": "deno lint && deno task drizzle-kit check",
+    "update": "deno run --allow-read=./ --allow-net --allow-write=./ https://deno.land/x/deno_outdated@0.2.5/cli.ts && deno install",
+    "dbml": "deno run -A ./src/dbml.ts",
+    "check-deps": "deno run -A jsr:@check/deps"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "checkJs": true
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "semiColons": true,
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": true,
+    "exclude": [
+      "node_modules",
+      "drizzle",
+      "tsconfig.json",
+      "README.md",
+      ".devcontainer",
+      ".vscode"
+    ]
+  }
+}
